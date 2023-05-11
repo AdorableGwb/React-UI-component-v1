@@ -17,6 +17,7 @@
 <script setup>
 import { computed } from "vue";
 import "./button-basic.scss";
+import { hexToRgba } from "@/utils/index";
 let props = defineProps({
   type: {
     //按钮类型
@@ -51,16 +52,55 @@ let props = defineProps({
     type: Boolean,
     default: false,
   },
+  color: {
+    //按钮颜色
+    type: String,
+    default: "",
+  },
 });
 const buttonClass = computed(() => {
   return {
     [`el-button--${props.type}`]: props.type,
     [`el-button--${props.size}`]: props.size,
+    [`el-button--custom`]: props.color,
     "is-round": props.round,
     "is-loading": props.loading,
     "is-disabled": props.disabled,
   };
 });
+/* 自定义颜色按钮 */
+const cutomerColor = computed(() => {
+  return props.color;
+});
+const customerHoverColor = computed(() => {
+  return props.color ? hexToRgba(props.color, 0.5).rgba : "";
+});
+const customerLoadingColor = computed(() => {
+  return props.color ? hexToRgba(props.color, 0.3).rgba : "";
+});
 </script>
-
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.el-button {
+  &--custom {
+    background-color: v-bind(cutomerColor);
+    border-color: v-bind(cutomerColor);
+    color: white;
+    &:hover {
+      color: #ffffff;
+      border-color: v-bind(customerHoverColor);
+      background-color: v-bind(customerHoverColor);
+    }
+    &:active {
+      background-color: #ecf5ff;
+      border-color: #409eff;
+      color: #409eff;
+    }
+    &.is-loading,
+    &.is-disabled {
+      background-color: v-bind(customerLoadingColor);
+      border-color: v-bind(customerLoadingColor);
+      cursor: not-allowed;
+    }
+  }
+}
+</style>

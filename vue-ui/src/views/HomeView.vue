@@ -15,6 +15,9 @@
       </template>
       按钮</Button
     >
+    <Button color="#ef62ae">按钮</Button>
+    <Button color="#626aef">按钮</Button>
+    <Button color="#626aef" loading>按钮</Button>
   </div>
 </template>
 
