@@ -1,0 +1,4 @@
+.is-loading,.is-disabled {
+  // 加载过程中鼠标不可点击
+  pointer-events: none;
+}

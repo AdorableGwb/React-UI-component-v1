@@ -1,0 +1,22 @@
+.el-button {
+  &--large {
+    --el-button-size: 40px;
+    height: var(--el-button-size);
+    padding: 12px 19px;
+    font-size: 14px;
+    border-radius: 4px;
+    &.is-round {
+      border-radius: 20px;
+    }
+  }
+  &--small {
+    --el-button-size: 24px;
+    height: var(--el-button-size);
+    padding: 5px 11px;
+    font-size: 12px;
+    border-radius: 3px;
+    &.is-round {
+      border-radius: 20px;
+    }
+  }
+}

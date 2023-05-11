@@ -1,7 +1,7 @@
-.btn + .btn {
+.el-button + .el-button {
   margin-left: 12px;
 }
-.btn {
+.el-button {
   padding: 8px 15px;
   outline: none;
   background-color: transparent;
@@ -32,11 +32,10 @@
     background-color: #ecf5ff;
     outline: none;
   }
-  &-round {
-    border-radius: 20px;
-  }
  
 }
-
 @import "button-type.scss";
 @import "button-loading.scss";
+@import "button-round.scss";
+@import "button-size.scss";
+@import "button-icon.scss"
