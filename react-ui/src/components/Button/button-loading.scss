@@ -1,0 +1,29 @@
+.btn-loading {
+  width: 20px;
+  height: 20px;
+  cursor: not-allowed;
+  .circular {
+    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    animation: loading-rotate 2s linear infinite;
+    .path {
+      animation: loading-dash 1.5s ease-in-out infinite;
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: 0;
+      stroke-width: 2;
+      // stroke: #ffffff;
+      stroke-linecap: round;
+      fill: rgba(0, 0, 0, 0);
+      fill: white;
+    }
+  }
+}
+.is-loading {
+  cursor: not-allowed;
+}
+@keyframes loading-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

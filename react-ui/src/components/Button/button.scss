@@ -1,0 +1,42 @@
+.btn + .btn {
+  margin-left: 12px;
+}
+.btn {
+  padding: 8px 15px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #dcdfe6;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  white-space: nowrap;
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  transition: 0.1s;
+  user-select: none;
+  color: #606266;
+  border-radius: 4px;
+  &:hover {
+    color: #409eff;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+    outline: none;
+  }
+  &:active {
+    color: #409eff;
+    border-color: #409eff;
+    background-color: #ecf5ff;
+    outline: none;
+  }
+  &-round {
+    border-radius: 20px;
+  }
+ 
+}
+
+@import "button-type.scss";
+@import "button-loading.scss";
